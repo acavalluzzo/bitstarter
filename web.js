@@ -6,7 +6,7 @@ var fs = require('fs');
 
 var bitbuf = fs.readFile('index.html');
 
-var bitpage = bitbuf.toString("utf-8");
+var bitpage = bitbuf.toString('utf-8');
 
 app.get('/', function(request, response) {
   response.write(bitpage);
