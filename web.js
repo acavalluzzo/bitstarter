@@ -8,7 +8,7 @@ var bitpage = bitbuf.toString("utf-8")
 
 
 app.get('/', function(request, response) {
-  response.send(bitpage);
+  response.write(bitpage);
 });
 
 var port = process.env.PORT || 5000;
