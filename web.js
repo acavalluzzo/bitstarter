@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 var fs = require('fs');
 
-var bitbuf = fs.readFile(index.html);
+var bitbuf = fs.readFile('index.html');
 
 var bitpage = bitbuf.toString("utf-8");
 
