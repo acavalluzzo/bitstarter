@@ -2,15 +2,9 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var bitbuf = fs.readFile(index.html)
+var bitbuf = fs.readFile(index.html);
 
-var bitpage = bitbuf.toString("utf-8")
-
-fs.readFile(index.html, 'utf8', function(err, data) {
-    if (err) throw err;
-    console.log('OK: ' + index.html);
-    console.log(data)}
-
+var bitpage = bitbuf.toString("utf-8");
 
 app.get('/', function(request, response) {
   response.write(bitpage);
