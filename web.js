@@ -4,13 +4,15 @@ var app = express.createServer(express.logger());
 
 var fs = require('fs');
 
-var bitbuf = fs.readFile('index.html');
+var bitfile = 'index.html';
 
-var bitpage = bitbuf.toString('utf-8');
-
-app.get('/', function(request, response) {
-  response.write(bitpage);
+fs.readFile(bitfile, function (err, data) {
+    if (err) throw err;
+    app.get('/', function(request, response) {
+	response.write(data);
+    });
 });
+
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
